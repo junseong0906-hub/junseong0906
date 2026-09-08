@@ -1,13 +1,17 @@
-import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        //TEST
-        float fahrenheit = sc.nextFloat();
-        float celsius = ((float)5 / 9) * (fahrenheit - 32);
+        int a = 1;
+        a += 1;
+        System.out.println(a);
+        
+        float b = 3.2f;
+        b -= a;
+        System.out.println(b);
 
-        System.out.printf("화씨에서 섭씨 온도: %.1f\n", celsius);
+        b *= a;
+        System.out.println(b);
+
 
     }
 }
