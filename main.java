@@ -2,18 +2,18 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-
-        char ch;
-        Scanner scanner = new Scanner(System.in);
-        do {
-            ch = scanner.next().charAt(0); 
-            if (ch != 'n') {
-            System.out.println(ch);   
+        
+        int i = 3;
+        while(i < 7){
+            System.out.printf("if 전: i = %d\n", i);
+            if(i < 7){
+                i += 2;
+                System.out.printf("continue 전: i = %d\n", i);
+                continue;
+            }
+            System.out.println("이건 출력 안됨!");
         }
-        else {
-            break;
-        }
-        } while (true);
+        System.out.printf("i = %d, 이건 출력됨\n", i);
     
     }
 }
