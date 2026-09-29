@@ -3,17 +3,16 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
         
-        int i = 3;
-        while(i < 7){
-            System.out.printf("if 전: i = %d\n", i);
-            if(i < 7){
-                i += 2;
-                System.out.printf("continue 전: i = %d\n", i);
-                continue;
-            }
-            System.out.println("이건 출력 안됨!");
-        }
-        System.out.printf("i = %d, 이건 출력됨\n", i);
-    
+        Scanner sc = new Scanner(System.in);
+        int num;
+        
+        do{
+            System.out.print("0이 아닌 정수 한 개 입력. 100 이상입력시 종료: ");
+            num = sc.nextInt();
+            if(num == 0) continue;
+            else System.out.println(num);
+            
+        } while (num < 100);
+
     }
 }
