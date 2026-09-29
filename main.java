@@ -1,11 +1,12 @@
 public class main {
     public static void main(String[] args) {
-        int Cup1 = 10;
-        int Cup2 = 50;
-        while (Cup1 < Cup2) {
-            Cup1 = Cup1 + 10;
+        for (int i = 10; i <= 50; i+=10) {
+            for (int j = 0; j <= 9; j++) {
+                System.out.print(i + j);
+                System.out.print(" ");
+            }
+            System.out.println();
+            
         }
-        System.out.println("Cup1 = " + Cup1);
-        System.out.println("Cup2 = " + Cup2);
     }
 }
