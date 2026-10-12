@@ -44,18 +44,18 @@ public class Project1 {
                 System.out.println("/!: rerun last snippet.");
 
             }else if(input.equals("/history")){
-                for (int i = 0; i < historyCount; i++){
+                for(int i = 0; i < historyCount; i++){
                     if(historyBuffer[i] != null){
                         System.out.println(historyBuffer[i]);
                     }
                 }
 
-            }else if (input.equals("/list")){
+            }else if(input.equals("/list")){
                 for(int i = 0; i < listCount; i++){
                     System.out.println((i + 1) + " : " + listBuffer[i]);
                 }
 
-            }else if (input.equals("/!")){
+            }else if(input.equals("/!")){
                 if(lastSnippet == null){
                     // exception 방지
                     System.out.println("Re-running ''");
@@ -63,11 +63,11 @@ public class Project1 {
                     System.out.println("Re-running '" + lastSnippet + "'.");
                 }
 
-            }else if (input.startsWith("/")){
+            }else if(input.startsWith("/")){
                 // 잘못된 '/' 명령어 처리
                 System.out.println("Invalid command: " + input);
                 System.out.println("Type /help for help.");
-                
+
             }else{
                 // 맨 앞에 '/' 가 붙지 않는 명령어
                 System.out.println("Running '" + input + "'.");
