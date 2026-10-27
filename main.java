@@ -1,15 +1,42 @@
+class Rectangle {
+    private double height;
+    private double width;
+    private double area;
+
+    Rectangle(double h, double w) {
+        height = h;
+        width = w;
+        area = w * h;
+    }
+
+    double getArea(){return area;}
+    double getHeight(){return height;}
+
+    void getHeight(double h){
+        height = h;
+        area = width * height;
+    }
+
+    double getWidth(){return width;}
+    void setWidth(double w){
+        width = w;
+        area = width * height;
+    }
+}
+
+
 
 public class main {
-
-    boolean isLessThan100(int num){
-        return (num < 100) ? true : false;
-    }
     public static void main(String[] args) {
-        
-        main main_1 = new main();
-        System.out.println(main_1.isLessThan100(50));
-                System.out.println(main_1.isLessThan100(100));
-                        System.out.println(main_1.isLessThan100(150));
+
+        Rectangle rect = new Rectangle(10, 15);
+        double area = rect.getArea();
+        System.out.println("area = " + area);
+        rect.setWidth (20);
+        area = rect.getArea();
+        System.out.println("new area = " + area);
+
 
     }
+
 }
