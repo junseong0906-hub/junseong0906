@@ -29,7 +29,7 @@ class Rectangle {
 public class TestRectangle {
     public static void main(String[] args) {
 
-        Rectangle rect = new Rectangle(10, 15);
+        RectangleImpl2 rect = new RectangleImpl2(10, 15);
         double area = rect.getArea();
         System.out.println("area = " + area);
         rect.setWidth (20);
