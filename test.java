@@ -1,29 +1,20 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
 
 public class test {
     public static void main(String[] args){
         
-        ArrayList<String> cities = new ArrayList<>();
-        cities.add("Seoul");
-        cities.add("Tokyo");
-        cities.add("Washington, D.C.");
-        cities.add("Beijing");
+        Map<String, String> m1 = new HashMap<>();
+        m1.put("Windows", "2000");
 
-        Iterator iter = cities.iterator();
-        while(iter.hasNext()){
-            String s = (String)iter.next();
-            System.out.println(s);
-        }
 
-        /*
-        for 사용
-        for(Iterator iter = cities.iterator(); iter.hasNext();){
-            String s = (String)iter.next();
-            System.out.println(s);
+        Iterator<String> keys = m1.keySet().iterator();
+        while(keys.hasNext()){
+            String key = keys.next();
+            System.out.printf("key = %s, value = %s\n", key, m1.get(key));
+
         }
-        
-        */
-        
     }
 }
