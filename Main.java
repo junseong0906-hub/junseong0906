@@ -1,50 +1,10 @@
-import java.util.*;
- 
-class Employee implements Comparable<Employee>
-{
-    private String name;
-    private int age;
- 
-    public Employee(String name, int age)
-    {
-        this.name = name;
-        this.age = age;
+import java.util.Arrays; 
+public class Main { 
+public static void main(String[] args) {
+        String[] arrToSort = {"apple", "oranges", "bananas", "Strawberry", "Blueberry"};
+        Arrays.sort(arrToSort); 
+        for(int i = 0; i < arrToSort.length; i++) {
+        System.out.print(arrToSort[i] + " ");
+        }
     }
- 
-    @Override
-    public String toString()
-    {
-        return "{" +
-                    "name='" + name + '\'' +
-                    ", age=" + age +
-                    '}';
-    }
- 
-    public String getName() {
-        return name;
-    }
- 
-    public int getAge() {
-        return age;
-    }
- 
-    @Override
-    public int compareTo(Employee o) {
-        return this.age - o.getAge();
-    }
-}
- 
-class Main
-{
-    public static void main(String[] args)
-    {
-        List<Employee> employees = new ArrayList<>(Arrays.asList(
-                                            new Employee("John", 15),
-                                            new Employee("Sam", 20),
-                                            new Employee("Joe", 10)
-                                        ));
- 
-        Collections.sort(employees);
-        System.out.println(employees);
-    }
-}
+} 
