@@ -1,33 +1,22 @@
-import java.io.*;
 
-class CopyFile {
-    public static void copyFile(InputStream src, OutputStream dest) {
-        try {
-            int data;
-            while ((data = src.read()) != -1) { dest.write(data); }    
-        }
-        catch (Exception e) { e.printStackTrace(); }    
-    }
-    
+import java.util.ArrayList;
+
+public class test {
     public static void main(String[] args) {
-        try {
-            String srcFileName = "newhello.txt";
-            String destFileName = "hello.txt";
-            // FileInputStream과 FileOutputStream을 사용
-            FileInputStream src = new FileInputStream(srcFileName);
-            FileOutputStream dest = new FileOutputStream(destFileName);
-            copyFile(src, dest);
-            src.close();
-            dest.close();     
-            
-            FileReader fr = new FileReader(destFileName);
-            BufferedReader src3 = new BufferedReader(fr);
-            String line;
-            while ((line = src3.readLine()) != null) {
-                System.out.println(line);
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        for (int i = 0; i < 3; i++) {
+            try {
+                int n = list.get(i);
+
+                System.out.printf("list[%d] = %d\n", i, n);
             }
-            src3.close();
+            catch (IndexOutOfBoundsException e) {
+                System.out.printf("인덱스 %d가 범위를 벗어났습니다.\n", i);
+            }
         }
-        catch (Exception e) { e.printStackTrace(); }
     }
 }
