@@ -1,18 +1,33 @@
-import java.util.*;
 import java.io.*;
 
-public class test {
-    public static void main(String[] args) throws IOException {
-
-        FileOutputStream f = new FileOutputStream("newhello.txt");
-        String s = "Hello World";
-
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            f.write((byte) ch);
+class CopyFile {
+    public static void copyFile(InputStream src, OutputStream dest) {
+        try {
+            int data;
+            while ((data = src.read()) != -1) { dest.write(data); }    
         }
-
-        f.write('\r');
-        f.close();
+        catch (Exception e) { e.printStackTrace(); }    
+    }
+    
+    public static void main(String[] args) {
+        try {
+            String srcFileName = "newhello.txt";
+            String destFileName = "hello.txt";
+            // FileInputStream과 FileOutputStream을 사용
+            FileInputStream src = new FileInputStream(srcFileName);
+            FileOutputStream dest = new FileOutputStream(destFileName);
+            copyFile(src, dest);
+            src.close();
+            dest.close();     
+            
+            FileReader fr = new FileReader(destFileName);
+            BufferedReader src3 = new BufferedReader(fr);
+            String line;
+            while ((line = src3.readLine()) != null) {
+                System.out.println(line);
+            }
+            src3.close();
+        }
+        catch (Exception e) { e.printStackTrace(); }
     }
 }
